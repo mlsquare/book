@@ -3,12 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to 100 problems in AI's documentation!
+100 problems in AI
 ==============================================
 
+
+
+
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 4
+   
+   Introduction <ch03/index>
+   Chapter 1 <ch01/index>
+   Chapter 2 <ch02/index>
+
 
 
 
