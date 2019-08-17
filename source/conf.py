@@ -14,6 +14,16 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import sys
+import os
+import shlex
+
+
+
+
+# import sphinx_py3doc_enhanced_theme
+# html_theme = "sphinx_py3doc_enhanced_theme"
+# html_theme_path = [sphinx_py3doc_enhanced_theme.get_html_theme_path()]
 
 # -- Project information -----------------------------------------------------
 
@@ -31,8 +41,20 @@ release = '0.01'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
 extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.inheritance_diagram',
+    'sphinx.ext.autosummary',
+    'sphinxcontrib.bibtex',
+    'sphinxcontrib.spelling',
 ]
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -48,14 +70,40 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+# guzzle theme
 
+# html_theme = "press"
+
+# import guzzle_sphinx_theme
+# html_theme_path = guzzle_sphinx_theme.html_theme_path()
+# html_theme = 'guzzle_sphinx_theme'
+# extensions.append("guzzle_sphinx_theme")
+# html_theme_options = {
+#     # Set the name of the project to appear in the sidebar
+#     "project_nav_name": "Project Name",
+# }
+
+html_logo = 'logo.png'
+html_favicon = 'favicon.png'
+
+# html_theme_options = {
+# 'show_powered_by': False,
+# # Visible levels of the global TOC; -1 means unlimited
+# "globaltoc_depth": 4,
+# # If False, expand all TOC entries
+# "globaltoc_collapse": False,
+# # If True, show hidden TOC entries
+# "globaltoc_includehidden": False
+# }
+
+html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'canonical_url': '',
-    'logo_only': False,
-    'display_version': True,
+    'logo_only': True,
+    'display_version': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
+    'style_nav_header_background': '#202020',
     'vcs_pageview_mode': '',
     # Toc options
     'collapse_navigation': False,
@@ -65,6 +113,10 @@ html_theme_options = {
     'titles_only': False
 }
 
+html_sidebars = {
+   '**': ['globaltoc.html', 'sourcelink.html'],
+   'using/windows': ['windowssidebar.html'],
+}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
